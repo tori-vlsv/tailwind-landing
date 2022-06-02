@@ -1,0 +1,22 @@
+// Grid dimensions
+$grid-width-widthout-offset: 1180px;
+$grid-offset: 16px;
+$grid-width: $grid-width-widthout-offset+$grid-offset * 2;
+$grid-padding: 0 $grid-offset;
+
+// Responsive dimensions
+$responsive-tablet-width: 1024px;
+$responsive-mobile-width: 414px;
+
+// Font size
+$font-size-64: 64px;
+$font-size-48: 48px;
+$font-size-36: 36px;
+$font-size-30: 30px;
+$font-size-34: 24px;
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+
+$font-size-default: $font-size-16;

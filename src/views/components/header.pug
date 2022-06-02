@@ -1,0 +1,16 @@
+mixin header(currentPage)
+  header.header
+    .wrapper
+      .header__wrapper
+        nav
+          ul
+            li.menu__item
+              a.menu__link(href='/', class=currentPage === 'home' ? 'active' : '') Главная
+            li.menu__item
+              a.menu__link(href='/blog/', class=currentPage === 'blog' ? 'active' : '') Блог
+            li.menu__item
+              a.menu__link(href='/blog/post/', class=currentPage === 'post' ? 'active' : '') Статья
+            li.menu__item
+              a.menu__link(href='/blog/post2/', class=currentPage === 'post2' ? 'active' : '') Статья 2
+            li.menu__item
+              a.menu__link(href='/404/', class=currentPage === '404' ? 'active' : '') 404

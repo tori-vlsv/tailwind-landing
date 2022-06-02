@@ -1,0 +1,39 @@
+@function rem($size) {
+  $remSize: $size / 16px;
+
+  @return #{$remSize}rem;
+}
+
+@function em($pixels, $context: $font-size-default) {
+  @return #{$pixels/$context}em;
+}
+
+$scale-tablet: 0.75;
+$scale-mobile: 0.5;
+$margin-directions: top right bottom left;
+
+@mixin padding($direction, $value, $important: false) {
+  @include gap('padding', $direction, $value, $important);
+}
+
+@mixin margin($direction, $value, $important: false) {
+  @include gap('margin', $direction, $value, $important);
+}
+
+@mixin gap($property, $direction, $value, $important: false) {
+  $important: #{if($important, '!important', '')};
+
+  @if (index($margin-directions, $direction)) {
+    $property-name: #{$property}-#{$direction};
+
+    #{$property-name}: $value $important;
+
+    @media screen and (max-width: $responsive-tablet-width) {
+      #{$property-name}: calc(#{$value} * #{$scale-tablet}) $important;
+    }
+
+    @media screen and (max-width: $responsive-mobile-width) {
+      #{$property-name}: calc(#{$value} * #{$scale-mobile}) $important;
+    }
+  }
+}

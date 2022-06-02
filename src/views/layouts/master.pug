@@ -1,0 +1,87 @@
+doctype html
+html(lang='ru')
+  head
+
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+
+    meta(name="msapplication-TileColor", content="#da532c")
+    meta(name="theme-color", content="#ffffff")
+
+    base(href="/")
+
+    block basicSeo
+      meta(name='description' content='Index page')
+      meta(name='keywords', content='index, page')
+      meta(name='author' content='wotkad')
+
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='')
+    meta(name='twitter:image', content='')
+    meta(name='twitter:description', content='')
+
+    meta(property='og:url', content='')
+    meta(property='og:title', content='')
+    meta(property='og:description', content='')
+    meta(property='og:image', content='')
+    meta(property='og:type', content='website')
+
+    link(rel='apple-touch-icon', sizes='180x180', href=require('images/favicons/apple-touch-icon.png'))
+    link(rel='icon', type='image/png', sizes='192x192', href=require('images/favicons/android-chrome-192x192.png'))
+    link(rel='icon', type='image/png', sizes='32x32', href=require('images/favicons/favicon-32x32.png'))
+    link(rel='icon', type='image/png', sizes='16x16', href=require('images/favicons/favicon-16x16.png'))
+    link(rel='shortcut icon', href=require('images/favicons/favicon.ico'))
+    link(rel="mask-icon", href="images/favicons/safari-pinned-tab.svg", color="#5bbad5")
+
+    link(type='font/woff', href=require('fonts/GraphikLCG-Black.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-BlackItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Bold.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-BoldItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Extralight.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-ExtralightItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Light.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-LightItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Medium.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-MediumItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Regular.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-RegularItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Semibold.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-SemiboldItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Super.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-SuperItalic.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-Thin.woff'), rel='preload', as='font', crossorigin)
+    link(type='font/woff', href=require('fonts/GraphikLCG-ThinItalic.woff'), rel='preload', as='font', crossorigin)
+
+    block title
+      title Rise | Страница без названия
+
+    block manifestBrowserconfigFiles
+      link(rel='manifest', href='./manifest.json', crossorigin)
+      meta(name='msapplication-config' content='./browserconfig.xml')
+
+    //- Global site tag (gtag.js) - Google Analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-Y")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXXXXX-X');
+
+  body
+
+    script.
+        function autorun() {}
+          if (window.addEventListener) window.addEventListener('load', autorun, false)
+          else window.onload = autorun
+    noscript.
+        Hey, you have JavaScript disabled, that's why you can see this message.
+    .render
+
+    include ../components/header.pug
+    
+    block content
+
+    include ../components/footer.pug
+
+    block js

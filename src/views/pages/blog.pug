@@ -1,0 +1,24 @@
+extends ../layouts/master.pug
+
+block title
+  title Rise | Блог
+
+block basicSeo
+  meta(name='description' content='Blog page')
+  meta(name='keywords', content='blog, page')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  +header('blog')
+
+  .barba(data-barba="wrapper")
+    main(data-barba="container" data-barba-namespace="blog")
+      section
+        .wrapper 
+          h1.font-bold Блог
+          
+

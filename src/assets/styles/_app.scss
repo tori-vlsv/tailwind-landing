@@ -1,0 +1,36 @@
+// @import "reset-css/sass/reset"; // Если используете tailwind base ниже, то данную строку можно закомментировать
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Основный параметры
+*/
+@import "./base/dimensions";
+@import "./base/fonts";
+@import "./base/palette";
+@import "./base/typography";
+
+/*
+  Утилиты
+*/
+@import "./utils/mixins";
+@import "./utils/keyframes";
+
+/*
+  Базовые стили
+*/
+@import "./base/global";
+
+/*
+  Компоненты
+*/
+@import "./components/header";
+@import "./components/footer";
+
+/*
+  Страницы
+*/
+@import "./pages/index";
+@import "./pages/blog";

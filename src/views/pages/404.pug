@@ -1,0 +1,23 @@
+extends ../layouts/master.pug
+
+block title
+  title Rise | 404
+
+block basicSeo
+  meta(name='description' content='Error page')
+  meta(name='keywords', content='error, page')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  +header('404') 
+
+  .barba(data-barba="wrapper")
+    main(data-barba="container" data-barba-namespace="404")
+      section
+        .wrapper 
+          h1.font-bold 404
+
